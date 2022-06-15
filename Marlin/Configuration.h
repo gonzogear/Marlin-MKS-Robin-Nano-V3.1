@@ -1,5 +1,5 @@
 /**
- * Marlin 3D Printer Firmware
+rg
  * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
@@ -71,7 +71,7 @@
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(DrGonzo, LK5Pro-NanoV3-Retransplant)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
-
+#define DIAG_JUMPERS_REMOVED
 /**
  * *** VENDORS PLEASE READ ***
  *
@@ -655,9 +655,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  10.13
-    #define DEFAULT_Ki    .58
-    #define DEFAULT_Kd  44.58
+    #define DEFAULT_Kp 11.16
+    #define DEFAULT_Ki 0.69
+    #define DEFAULT_Kd 44.87
   #endif
 #endif
 
@@ -720,7 +720,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -1288,18 +1288,18 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -48, -16, -2.3 }
+#define NOZZLE_TO_PROBE_OFFSET { -24.5, -6.5, -3.1 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 40
 
 // X and Y axis travel speed (mm/min) between probes
 //#define XY_PROBE_FEEDRATE (133*60)
-#define XY_PROBE_FEEDRATE (150*60)
+#define XY_PROBE_FEEDRATE (120*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-//#define Z_PROBE_FEEDRATE_FAST (4*60)
+//#define Z_PROBE_FEEDRATE_FASfbT (4*60)
 #define Z_PROBE_FEEDRATE_FAST (20*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
@@ -1501,8 +1501,9 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 250
-#define Y_BED_SIZE 270
+#define X_BED_SIZE 300
+#define Y_BED_SIZE 300
+
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
