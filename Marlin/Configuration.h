@@ -1163,8 +1163,8 @@ rg
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-//#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 200, 2000 }
+#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 300, 10000 }
+//#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 200, 2000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 //#if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1462,15 +1462,15 @@ rg
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -24.5, -6.5, -3.1 }
+#define NOZZLE_TO_PROBE_OFFSET { -24.5, -6.5, -3.39 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 40
+#define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-//#define XY_PROBE_FEEDRATE (133*60)
-#define XY_PROBE_FEEDRATE (120*60)
+#define XY_PROBE_FEEDRATE (133*60)
+//#define XY_PROBE_FEEDRATE (120*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 //#define Z_PROBE_FEEDRATE_FASfbT (4*60)
@@ -2033,7 +2033,7 @@ rg
  * Commands to execute at the end of G29 probing.
  * Useful to retract or move the Z probe out of the way.
  */
-//#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X15 Y330\nG1 Z0.5\nG1 Z10"
+#define Z_PROBE_END_SCRIPT "G1 Z10 F12000\nG1 X0 Y0"
 
 // @section homing
 
