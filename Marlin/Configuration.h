@@ -646,9 +646,9 @@ rg
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 11.16
-    #define DEFAULT_Ki 0.69
-    #define DEFAULT_Kd 44.87
+    #define DEFAULT_Kp 9.31
+    #define DEFAULT_Ki 0.49
+    #define DEFAULT_Kd 44.33
   #endif
 #endif
 
@@ -729,9 +729,9 @@ rg
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 100.04
-  #define DEFAULT_bedKi 21.10
-  #define DEFAULT_bedKd 368.77
+  #define DEFAULT_bedKp 82.34
+  #define DEFAULT_bedKi 8.51
+  #define DEFAULT_bedKd 531.34
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1140,7 +1140,7 @@ rg
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400,101.34436 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400,96.51429 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1882,7 +1882,7 @@ rg
  * Turn on with the command 'M111 S32'.
  * NOTE: Requires a lot of PROGMEM!
  */
-#define DEBUG_LEVELING_FEATURE
+//#define DEBUG_LEVELING_FEATURE
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL, PROBE_MANUALLY)
   // Set a height for the start of manual adjustment
